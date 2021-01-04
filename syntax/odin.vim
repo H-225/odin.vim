@@ -61,7 +61,8 @@ syntax keyword odinDefer defer
 syntax region odinChar start=/\v'/ skip=/\v\\./ end=/\v'/
 syntax region odinString start=/\v"/ skip=/\v\\./ end=/\v"/
 
-syntax match odinFunction "\v<\w*>(\s*::\s*proc)@="
+syntax match odinFunctionDecl "\v<\w*>(\s*::\s*proc)@="
+syntax match odinFunctionCall    "\w\(\w\)*("he=e-1,me=e-1
 
 syntax match odinTagNote "@\<\w\+\>" display
 
@@ -144,7 +145,8 @@ highlight link odinUnion Structure
 highlight link odinBitField Structure
 highlight link odinBitSet Structure
 
-highlight link odinFunction Function
+highlight link odinFunctionDecl Function
+highlight link odinFunctionCall Function
 
 highlight link odinMacro Macro
 highlight link odinIf Conditional
